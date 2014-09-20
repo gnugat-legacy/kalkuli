@@ -1,0 +1,23 @@
+{
+    "name": "gnugat/kalkuli",
+    "description": "An accounting application",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Gnugat\\Kalkuli\\": "src/Gnugat/Kalkuli",
+            "test\\Gnugat\\Kalkuli\\": "test/Gnugat/Kalkuli"
+        }
+    },
+    "authors": [
+        {
+            "name": "Loïc Chardonnet",
+            "email": "loic.chardonnet@gmail.com",
+            "homepage": "http://gnugat.github.io",
+            "role": "Developer"
+        }
+    ],
+    "require-dev": {
+        "phpspec/phpspec": "~2.0",
+        "phpunit/phpunit": "~4.1"
+    }
+}
