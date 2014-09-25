@@ -18,7 +18,7 @@ class AddTagCommandSpec extends ObjectBehavior
 
     function it_is_a_command()
     {
-        $this->shouldHaveType('Gnugat\Kalkuli\Command\Command');
+        $this->shouldImplement('Gnugat\Kalkuli\Command\Command');
     }
 
     function it_creates_a_new_tag(TagRepository $tagRepository)

@@ -25,6 +25,11 @@ class Transaction
     private $amount;
 
     /**
+     * @var array
+     */
+    private $tags = array();
+
+    /**
      * @param Account $account
      * @param string  $date
      * @param string  $label
@@ -36,5 +41,13 @@ class Transaction
         $this->date = $date;
         $this->label = $label;
         $this->amount = $amount;
+    }
+
+    /**
+     * @param Tag $tag
+     */
+    public function addTag(Tag $tag)
+    {
+        $this->tags[] = $tag;
     }
 }
