@@ -4,8 +4,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Gnugat\\Kalkuli\\": "src/Gnugat/Kalkuli",
-            "test\\Gnugat\\Kalkuli\\": "test/Gnugat/Kalkuli"
+            "Gnugat\\Kalkuli\\": "src/Gnugat/Kalkuli"
         }
     },
     "authors": [
@@ -17,7 +16,6 @@
         }
     ],
     "require-dev": {
-        "phpspec/phpspec": "~2.0",
-        "phpunit/phpunit": "~4.1"
+        "phpspec/phpspec": "~2.0"
     }
 }
