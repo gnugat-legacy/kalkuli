@@ -7,7 +7,7 @@ An accounting application.
 * [x] Add Account
 * [x] Add Transaction
 * [x] Add Tag
-* [ ] Tag Transaction
+* [x] Tag Transaction
 * [ ] Untag Transation
 * [ ] Add TagMatcher
 * [ ] Add MonthyLimit
