@@ -4,8 +4,8 @@ An accounting application.
 
 ## Features
 
-* [ ] Add Account
-* [ ] Add Transaction
+* [x] Add Account
+* [x] Add Transaction
 * [ ] Add Tag
 * [ ] Tag Transaction
 * [ ] Untag Transation
