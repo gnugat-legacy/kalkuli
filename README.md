@@ -6,7 +6,7 @@ An accounting application.
 
 * [x] Add Account
 * [x] Add Transaction
-* [ ] Add Tag
+* [x] Add Tag
 * [ ] Tag Transaction
 * [ ] Untag Transation
 * [ ] Add TagMatcher
