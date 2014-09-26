@@ -9,5 +9,5 @@ An accounting application.
 * [x] Add Tag
 * [x] Tag Transaction
 * [ ] Untag Transation
-* [ ] Add TagMatcher
-* [ ] Add MonthyLimit
+* [x] Add TagMatcher
+* [x] Add MonthyLimit
