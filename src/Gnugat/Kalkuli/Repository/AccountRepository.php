@@ -4,9 +4,6 @@ namespace Gnugat\Kalkuli\Repository;
 
 use Gnugat\Kalkuli\Entity\Account;
 
-/**
- * Takes care of the persistence of Account.
- */
 interface AccountRepository
 {
     /**
