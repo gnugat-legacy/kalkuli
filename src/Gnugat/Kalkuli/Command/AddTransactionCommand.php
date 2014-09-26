@@ -5,6 +5,7 @@ namespace Gnugat\Kalkuli\Command;
 use Date;
 use Gnugat\Kalkuli\Entity\Transaction;
 use Gnugat\Kalkuli\Repository\AccountRepository;
+use Gnugat\Kalkuli\Repository\TagMatcherRepository;
 use Gnugat\Kalkuli\Repository\TransactionRepository;
 
 class AddTransactionCommand implements Command
@@ -20,13 +21,24 @@ class AddTransactionCommand implements Command
     private $transactionRepository;
 
     /**
+     * @var TagMatcherRepository
+     */
+    private $tagMatcherRepository;
+
+    /**
      * @param AccountRepository     $accountRepository
      * @param TransactionRepository $transactionRepository
+     * @param TagMatcherRepository  $tagMatcherRepository
      */
-    public function __construct(AccountRepository $accountRepository, TransactionRepository $transactionRepository)
+    public function __construct(
+        AccountRepository $accountRepository,
+        TransactionRepository $transactionRepository,
+        TagMatcherRepository $tagMatcherRepository
+    )
     {
         $this->accountRepository = $accountRepository;
         $this->transactionRepository = $transactionRepository;
+        $this->tagMatcherRepository = $tagMatcherRepository;
     }
 
     /**
@@ -45,6 +57,10 @@ class AddTransactionCommand implements Command
             $label,
             $amount
         );
+        $tagMatchers = $this->tagMatcherRepository->findAll();
+        foreach ($tagMatchers as $tagMatcher) {
+            $tagMatcher->match($transaction);
+        }
         $this->transactionRepository->persist($transaction);
 
         return Command::EXIT_SUCCESS;
