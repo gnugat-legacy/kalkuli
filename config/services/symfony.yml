@@ -5,7 +5,7 @@ services:
             - Kalkuli
             - "%kalkuli.version%"
         calls:
-#            - [ add, [ "@kalkuli._command" ]]
+            - [ add, [ "@kalkuli.self_update_command" ]]
 
     symfony_console.output:
         class: Symfony\Component\Console\Output\ConsoleOutput

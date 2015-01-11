@@ -28,6 +28,7 @@
     },
     "require-dev": {
         "ciaranmcnulty/phpspec-typehintedmethods": "~1.0",
+        "kherge/box": "~2.5",
         "phpspec/phpspec": "~2.1",
         "phpunit/phpunit": "~4.4"
     }

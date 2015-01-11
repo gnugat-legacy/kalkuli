@@ -1,2 +1,6 @@
 imports:
     - { resource: services/symfony.yml }
+
+services:
+    kalkuli.self_update_command:
+        class: Gnugat\Kalkuli\SelfUpdateCommand

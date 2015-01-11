@@ -1,0 +1,21 @@
+{
+    "chmod": "0755",
+    "directories": [
+        "src/Gnugat/Kalkuli",
+        "config"
+    ],
+    "files": [
+        "LICENSE"
+    ],
+    "finder": [
+        {
+            "name": ["*.php", "*.yml", "*.xsd"],
+            "exclude": ["Tests", "tests", "spec", "doc", "bin"],
+            "in": ["vendor"]
+        }
+    ],
+    "git-version": "package_version",
+    "main": "bin/kalkuli",
+    "output": "bin/kalkuli.phar",
+    "stub": true
+}
