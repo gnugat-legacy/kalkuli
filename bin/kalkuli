@@ -1,0 +1,19 @@
+#!/usr/bin/php
+<?php
+
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+
+require __DIR__.'/../vendor/autoload.php';
+
+$container = new ContainerBuilder();
+$container->setParameter('kalkuli.version', '@package_version@');
+
+$loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../config'));
+$loader->load('services.yml');
+
+$output = $container->get('symfony_console.output');
+$application = $container->get('symfony_console.application');
+$application->run(null, $output);

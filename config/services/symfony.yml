@@ -1,0 +1,11 @@
+services:
+    symfony_console.application:
+        class: Symfony\Component\Console\Application
+        arguments:
+            - Kalkuli
+            - "%kalkuli.version%"
+        calls:
+#            - [ add, [ "@kalkuli._command" ]]
+
+    symfony_console.output:
+        class: Symfony\Component\Console\Output\ConsoleOutput
