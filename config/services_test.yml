@@ -1,0 +1,11 @@
+imports:
+    - { resource: services.yml }
+
+services:
+    kalkuli.test_output_factory:
+        class: Gnugat\Kalkuli\Console\TestOutputFactory
+
+    symfony_console.output:
+        class: Symfony\Component\Console\Output\ConsoleOutput
+        factory_service: kalkuli.test_output_factory
+        factory_method: make
