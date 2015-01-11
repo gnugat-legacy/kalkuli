@@ -27,6 +27,7 @@
     },
     "require-dev": {
         "phpspec/phpspec": "~2.1",
+        "ciaranmcnulty/phpspec-typehintedmethods": "~1.0",
         "phpunit/phpunit": "~4.4"
     }
 }
