@@ -15,7 +15,7 @@
         }
     ],
     "git-version": "package_version",
-    "main": "bin/kalkuli",
+    "main": "app/console",
     "output": "bin/kalkuli.phar",
     "stub": true
 }

@@ -5,7 +5,7 @@
     backupGlobals="false"
     colors="true"
     syntaxCheck="false"
-    bootstrap="vendor/autoload.php">
+    bootstrap="app/bootstrap.php">
 
     <testsuites>
         <testsuite name="Functional tests">

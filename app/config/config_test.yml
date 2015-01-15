@@ -1,0 +1,17 @@
+imports:
+    - { resource: config.yml }
+
+framework:
+    test: ~
+    session:
+        storage_id: session.storage.mock_file
+    profiler:
+        collect: false
+
+doctrine:
+    dbal:
+        dbname: kalkuli_test
+
+web_profiler:
+    toolbar: false
+    intercept_redirects: false

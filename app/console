@@ -1,0 +1,13 @@
+#!/usr/bin/php
+<?php
+
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+
+require __DIR__.'/bootstrap.php';
+
+$input = new ArgvInput();
+$env = $input->getParameterOption(array('--env', '-e'), 'prod');
+$kernel = new AppKernel($env, false);
+$application = new Application($kernel);
+$application->run($input);

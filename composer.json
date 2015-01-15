@@ -3,33 +3,56 @@
     "description": "An accounting application",
     "license": "MIT",
     "type": "project",
-    "autoload": {
-        "psr-4": {
-            "Gnugat\\Kalkuli\\": "src/Gnugat/Kalkuli"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Gnugat\\Kalkuli\\Tests\\": "tests"
-        }
-    },
-    "authors": [
-        {
+    "authors": [{
             "name": "Loïc Chardonnet",
             "email": "loic.chardonnet@gmail.com",
             "homepage": "http://gnugat.github.io",
             "role": "Developer"
-        }
-    ],
+    }],
+    "autoload": {
+        "psr-4": { "AppBundle\\": "src/AppBundle" }
+    },
+    "autoload-dev": {
+        "psr-4": { "AppBundle\\Tests\\": "tests" }
+    },
     "require": {
-        "symfony/config": "~2.6",
-        "symfony/console": "~2.6",
-        "symfony/dependency-injection": "~2.6"
+        "doctrine/doctrine-bundle": "~1.2",
+        "doctrine/doctrine-fixtures-bundle": "~2.2",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "incenteev/composer-parameter-handler": "~2.0",
+        "php": ">=5.3.3",
+        "twig/extensions": "~1.0",
+        "sensio/distribution-bundle": "~3.0.12",
+        "sensio/framework-extra-bundle": "~3.0",
+        "simple-bus/command-bus": "~2.0@dev",
+        "simple-bus/message-bus": "~1.0@dev",
+        "simple-bus/symfony-bridge": "~2.0@dev",
+        "symfony/assetic-bundle": "~2.3",
+        "symfony/monolog-bundle": "~2.4",
+        "symfony/symfony": "2.6.*"
     },
     "require-dev": {
         "ciaranmcnulty/phpspec-typehintedmethods": "~1.0",
         "kherge/box": "~2.5",
         "phpspec/phpspec": "~2.1",
         "phpunit/phpunit": "~4.4"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap"
+        ],
+        "post-update-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap"
+        ]
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web",
+        "symfony-assets-install": "relative",
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
+        }
     }
 }

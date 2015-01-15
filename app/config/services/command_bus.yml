@@ -1,0 +1,48 @@
+services:
+    kalkuli.create_account_handler:
+        class: AppBundle\CommandBus\CreateAccountHandler
+        arguments:
+            - "@kalkuli.account_repository"
+        tags:
+            - { name: command_handler, handles: AppBundle\CommandBus\CreateAccount }
+
+    kalkuli.create_monthly_limit_handler:
+        class: AppBundle\CommandBus\CreateMonthlyLimitHandler
+        arguments:
+            - "@kalkuli.account_repository"
+            - "@kalkuli.monthly_limit_repository"
+            - "@kalkuli.tag_repository"
+        tags:
+            - { name: command_handler, handles: AppBundle\CommandBus\CreateMonthlyLimit }
+
+    kalkuli.create_tag_handler:
+        class: AppBundle\CommandBus\CreateTagHandler
+        arguments:
+            - "@kalkuli.tag_repository"
+        tags:
+            - { name: command_handler, handles: AppBundle\CommandBus\CreateTag }
+
+    kalkuli.create_tag_matcher_handler:
+        class: AppBundle\CommandBus\CreateTagMatcherHandler
+        arguments:
+            - "@kalkuli.tag_matcher_repository"
+            - "@kalkuli.tag_repository"
+        tags:
+            - { name: command_handler, handles: AppBundle\CommandBus\CreateTagMatcher }
+
+    kalkuli.create_tag_transaction_handler:
+        class: AppBundle\CommandBus\TagTransactionHandler
+        arguments:
+            - "@kalkuli.tag_repository"
+            - "@kalkuli.transaction_repository"
+        tags:
+            - { name: command_handler, handles: AppBundle\CommandBus\TagTransaction }
+
+    kalkuli.create_transaction_handler:
+        class: AppBundle\CommandBus\CreateTransactionHandler
+        arguments:
+            - "@kalkuli.account_repository"
+            - "@kalkuli.tag_matcher_repository"
+            - "@kalkuli.transaction_repository"
+        tags:
+            - { name: command_handler, handles: AppBundle\CommandBus\CreateTransaction }

@@ -1,0 +1,30 @@
+services:
+    kalkuli.account_repository:
+        class: AppBundle\Entity\AccountRepository
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments: ['AppBundle:Account']
+
+    kalkuli.monthly_limit_repository:
+        class: AppBundle\Entity\MonthlyLimitRepository
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments: ['AppBundle:MonthlyLimit']
+
+    kalkuli.tag_repository:
+        class: AppBundle\Entity\TagRepository
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments: ['AppBundle:Tag']
+
+    kalkuli.tag_matcher_repository:
+        class: AppBundle\Entity\TagMatcherRepository
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments: ['AppBundle:TagMatcher']
+
+    kalkuli.transaction_repository:
+        class: AppBundle\Entity\TransactionRepository
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments: ['AppBundle:Transaction']

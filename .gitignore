@@ -1,3 +1,14 @@
+# Third party
+/composer.lock
 /vendor/
-composer.lock
+
+# Generated / Temporary files
+/app/bootstrap.php.cache
+/app/cache/*
+!app/cache/.gitkeep
+/app/logs/*
+!app/logs/.gitkeep
 /bin/kalkuli.phar
+
+# Configuration Files
+/app/config/parameters.yml
