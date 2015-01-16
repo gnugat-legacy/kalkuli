@@ -1,4 +1,9 @@
 services:
+    kalkuli.account_factory:
+        class: AppBundle\Entity\AccountFactory
+        arguments:
+            - "@kalkuli.account_repository"
+
     kalkuli.account_repository:
         class: AppBundle\Entity\AccountRepository
         factory_service: doctrine.orm.default_entity_manager

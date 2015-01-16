@@ -2,6 +2,7 @@ services:
     kalkuli.create_account_handler:
         class: AppBundle\CommandBus\CreateAccountHandler
         arguments:
+            - "@kalkuli.account_factory"
             - "@kalkuli.account_repository"
         tags:
             - { name: command_handler, handles: AppBundle\CommandBus\CreateAccount }
@@ -46,3 +47,10 @@ services:
             - "@kalkuli.transaction_repository"
         tags:
             - { name: command_handler, handles: AppBundle\CommandBus\CreateTransaction }
+
+    kalkuli.set_default_account_handler:
+        class: AppBundle\CommandBus\SetDefaultAccountHandler
+        arguments:
+            - "@kalkuli.account_repository"
+        tags:
+            - { name: command_handler, handles: AppBundle\CommandBus\SetDefaultAccount }
