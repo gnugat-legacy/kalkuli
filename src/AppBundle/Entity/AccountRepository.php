@@ -7,6 +7,16 @@ use Doctrine\ORM\EntityRepository;
 class AccountRepository extends EntityRepository
 {
     /**
+     * @return int
+     */
+    public function count()
+    {
+        $accounts = $this->findAll();
+
+        return count($accounts);
+    }
+
+    /**
      * @param string $name
      *
      * @return Account
@@ -21,9 +31,7 @@ class AccountRepository extends EntityRepository
      */
     public function findDefault()
     {
-        $accounts = $this->findAll();
-
-        return array_shift($accounts);
+        return $this->findOneBy(array('isDefault' => true));
     }
 
     /**

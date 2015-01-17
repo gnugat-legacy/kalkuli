@@ -27,7 +27,15 @@ class Account
     private $name;
 
     /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean")
+     */
+    private $isDefault = false;
+
+    /**
      * @param string $name
+     * @param bool   $isDefault
      */
     public function __construct($name)
     {
@@ -40,5 +48,18 @@ class Account
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDefault()
+    {
+        return $this->isDefault;
+    }
+
+    public function toggleDefault()
+    {
+        $this->isDefault = !$this->isDefault;
     }
 }

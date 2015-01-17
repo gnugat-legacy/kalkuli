@@ -13,9 +13,15 @@ class AccountFixtures extends AbstractFixture
      */
     public function load(ObjectManager $em)
     {
-        $account = new Account('Checking');
-        $this->addReference('account.checking', $account);
-        $em->persist($account);
+        $defaultAccount = new Account('Default');
+        $defaultAccount->toggleDefault();
+        $this->addReference('account.default', $defaultAccount);
+        $em->persist($defaultAccount);
+
+        $checking = new Account('Checking');
+        $this->addReference('account.checking', $checking);
+        $em->persist($checking);
+
         $em->flush();
     }
 }
